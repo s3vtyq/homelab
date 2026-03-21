@@ -63,7 +63,7 @@ sudo sysctl -w vm.max_map_count=262144
 docker compose -f generate-indexer-certs.yml run --rm generator
 docker compose up -d
 ```
-Dashboard at `https://YOUR_IP` — default credentials in `docker-compose.yml`.
+Dashboard at `https://YOUR_IP` — set `GRAFANA_PASSWORD` env var before starting (defaults to `admin`).
 
 ### 3️⃣ Install Wazuh agent on host
 ```bash
