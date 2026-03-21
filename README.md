@@ -1,7 +1,7 @@
 # homelab
 
 Personal cybersecurity homelab running on a headless Ubuntu 24.04 server. Built to practice threat detection, log analysis, and SOC workflows using real tools.
-
+![Architecture](homelab-diagram.svg)
 ---
 
 ## Stack
