@@ -1,0 +1,124 @@
+<svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" font-family="'Courier New', monospace">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#00ff88"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#4da6ff"/>
+    </marker>
+    <marker id="arrow-yellow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ffd700"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="540" fill="#0d1117" rx="12"/>
+
+  <!-- Grid dots -->
+  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="1" fill="#ffffff08"/>
+  </pattern>
+  <rect width="900" height="540" fill="url(#grid)" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" font-size="13" fill="#ffffff40" letter-spacing="4">HOMELAB ARCHITECTURE</text>
+
+  <!-- ========== ATTACKER ========== -->
+  <rect x="30" y="220" width="120" height="60" rx="6" fill="#1a0a0a" stroke="#ff4444" stroke-width="1.5"/>
+  <text x="90" y="244" text-anchor="middle" font-size="10" fill="#ff6666" letter-spacing="2">ATTACKER</text>
+  <text x="90" y="262" text-anchor="middle" font-size="9" fill="#ff444480">external threat</text>
+
+  <!-- ========== COWRIE ========== -->
+  <rect x="220" y="180" width="140" height="70" rx="6" fill="#0a1a0f" stroke="#00ff88" stroke-width="1.5"/>
+  <text x="290" y="206" text-anchor="middle" font-size="11" fill="#00ff88" letter-spacing="1">COWRIE</text>
+  <text x="290" y="222" text-anchor="middle" font-size="9" fill="#00ff8880">SSH Honeypot</text>
+  <text x="290" y="238" text-anchor="middle" font-size="9" fill="#00ff8860">port :2222</text>
+
+  <!-- ========== SERVER BOX ========== -->
+  <rect x="200" y="60" width="520" height="400" rx="10" fill="none" stroke="#ffffff10" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="460" y="82" text-anchor="middle" font-size="10" fill="#ffffff25" letter-spacing="3">UBUNTU 24.04 SERVER</text>
+
+  <!-- ========== WAZUH AGENT ========== -->
+  <rect x="390" y="160" width="140" height="70" rx="6" fill="#0a0f1a" stroke="#4da6ff" stroke-width="1.5"/>
+  <text x="460" y="186" text-anchor="middle" font-size="11" fill="#4da6ff" letter-spacing="1">WAZUH AGENT</text>
+  <text x="460" y="202" text-anchor="middle" font-size="9" fill="#4da6ff80">host monitoring</text>
+  <text x="460" y="218" text-anchor="middle" font-size="9" fill="#4da6ff60">auth.log · syslog</text>
+
+  <!-- ========== WAZUH MANAGER ========== -->
+  <rect x="390" y="290" width="140" height="80" rx="6" fill="#080d1a" stroke="#4da6ff" stroke-width="2"/>
+  <rect x="390" y="290" width="140" height="80" rx="6" fill="#4da6ff08"/>
+  <text x="460" y="318" text-anchor="middle" font-size="11" fill="#4da6ff" letter-spacing="1">WAZUH SIEM</text>
+  <text x="460" y="334" text-anchor="middle" font-size="9" fill="#4da6ff80">alerts · MITRE ATT&amp;CK</text>
+  <text x="460" y="350" text-anchor="middle" font-size="9" fill="#4da6ff60">dashboard :443</text>
+
+  <!-- ========== GRAFANA ========== -->
+  <rect x="570" y="160" width="130" height="70" rx="6" fill="#130a1a" stroke="#ff6b35" stroke-width="1.5"/>
+  <text x="635" y="186" text-anchor="middle" font-size="11" fill="#ff6b35" letter-spacing="1">GRAFANA</text>
+  <text x="635" y="202" text-anchor="middle" font-size="9" fill="#ff6b3580">metrics dashboard</text>
+  <text x="635" y="218" text-anchor="middle" font-size="9" fill="#ff6b3560">port :3000</text>
+
+  <!-- ========== PROMETHEUS ========== -->
+  <rect x="570" y="290" width="130" height="70" rx="6" fill="#130a0a" stroke="#ff6b35" stroke-width="1"/>
+  <text x="635" y="316" text-anchor="middle" font-size="11" fill="#ff6b35" letter-spacing="1">PROMETHEUS</text>
+  <text x="635" y="332" text-anchor="middle" font-size="9" fill="#ff6b3580">node exporter</text>
+  <text x="635" y="348" text-anchor="middle" font-size="9" fill="#ff6b3560">port :9090</text>
+
+  <!-- ========== UPTIME KUMA ========== -->
+  <rect x="240" y="400" width="130" height="60" rx="6" fill="#1a150a" stroke="#ffd700" stroke-width="1.5"/>
+  <text x="305" y="424" text-anchor="middle" font-size="11" fill="#ffd700" letter-spacing="1">UPTIME KUMA</text>
+  <text x="305" y="440" text-anchor="middle" font-size="9" fill="#ffd70080">port :3001</text>
+
+  <!-- ========== PORTAINER ========== -->
+  <rect x="400" y="400" width="120" height="60" rx="6" fill="#0a1015" stroke="#00bcd4" stroke-width="1.5"/>
+  <text x="460" y="424" text-anchor="middle" font-size="11" fill="#00bcd4" letter-spacing="1">PORTAINER</text>
+  <text x="460" y="440" text-anchor="middle" font-size="9" fill="#00bcd480">port :9443</text>
+
+  <!-- ========== TAILSCALE ========== -->
+  <rect x="680" y="400" width="120" height="60" rx="6" fill="#0f0a1a" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="740" y="424" text-anchor="middle" font-size="11" fill="#9b59b6" letter-spacing="1">TAILSCALE</text>
+  <text x="740" y="440" text-anchor="middle" font-size="9" fill="#9b59b680">remote access</text>
+
+  <!-- ========== TELEGRAM ========== -->
+  <rect x="240" y="490" width="130" height="36" rx="6" fill="#0a1520" stroke="#2196f3" stroke-width="1"/>
+  <text x="305" y="513" text-anchor="middle" font-size="10" fill="#2196f3" letter-spacing="1">TELEGRAM ALERTS</text>
+
+  <!-- ========== ARROWS ========== -->
+
+  <!-- Attacker → Cowrie -->
+  <line x1="150" y1="250" x2="218" y2="220" stroke="#ff4444" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.8"/>
+  <text x="172" y="228" font-size="8" fill="#ff444480">brute force</text>
+
+  <!-- Cowrie → Wazuh Agent (logs) -->
+  <line x1="360" y1="210" x2="388" y2="200" stroke="#00ff88" stroke-width="1.5" marker-end="url(#arrow-blue)" opacity="0.8"/>
+  <text x="360" y="198" font-size="8" fill="#00ff8870">logs</text>
+
+  <!-- Wazuh Agent → Wazuh Manager -->
+  <line x1="460" y1="230" x2="460" y2="288" stroke="#4da6ff" stroke-width="1.5" marker-end="url(#arrow-blue)" opacity="0.8"/>
+  <text x="466" y="264" font-size="8" fill="#4da6ff70">events</text>
+
+  <!-- Prometheus → Grafana -->
+  <line x1="635" y1="288" x2="635" y2="232" stroke="#ff6b35" stroke-width="1.5" marker-end="url(#arrow-yellow)" opacity="0.8"/>
+  <text x="641" y="264" font-size="8" fill="#ff6b3570">metrics</text>
+
+  <!-- Wazuh Manager → Uptime Kuma (monitored) -->
+  <line x1="420" y1="370" x2="350" y2="398" stroke="#ffd700" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+
+  <!-- Uptime Kuma → Telegram -->
+  <line x1="305" y1="460" x2="305" y2="488" stroke="#ffd700" stroke-width="1.5" marker-end="url(#arrow-yellow)" opacity="0.8"/>
+
+  <!-- Remote user → Tailscale -->
+  <rect x="780" y="220" width="90" height="50" rx="6" fill="#0d1117" stroke="#9b59b640" stroke-width="1"/>
+  <text x="825" y="240" text-anchor="middle" font-size="9" fill="#9b59b6a0">YOU</text>
+  <text x="825" y="256" text-anchor="middle" font-size="8" fill="#9b59b660">anywhere</text>
+  <line x1="800" y1="270" x2="760" y2="398" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-blue)" opacity="0.6"/>
+
+  <!-- Legend -->
+  <rect x="30" y="460" width="160" height="68" rx="6" fill="#ffffff05" stroke="#ffffff10" stroke-width="1"/>
+  <text x="45" y="478" font-size="9" fill="#ffffff50" letter-spacing="2">LEGEND</text>
+  <line x1="45" y1="492" x2="70" y2="492" stroke="#00ff88" stroke-width="1.5"/>
+  <text x="76" y="496" font-size="8" fill="#ffffff60">honeypot traffic</text>
+  <line x1="45" y1="507" x2="70" y2="507" stroke="#4da6ff" stroke-width="1.5"/>
+  <text x="76" y="511" font-size="8" fill="#ffffff60">security events</text>
+  <line x1="45" y1="522" x2="70" y2="522" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="76" y="526" font-size="8" fill="#ffffff60">remote VPN</text>
+</svg>
