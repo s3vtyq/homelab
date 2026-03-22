@@ -2,7 +2,47 @@
 
 Personal cybersecurity homelab running on a headless Ubuntu 24.04 server. Built to practice threat detection, log analysis, and SOC workflows using real tools.
 
-![Architecture](homelab-diagram.svg)
+```mermaid
+flowchart TD
+    ATTACKER([External Attacker])
+ 
+    subgraph SERVER["Ubuntu 24.04 — homelab"]
+        direction TB
+ 
+        subgraph DECEPTION["Deception Layer"]
+            COWRIE["Cowrie\nSSH Honeypot\n:2222"]
+        end
+ 
+        subgraph SIEM["Security Monitoring"]
+            AGENT["Wazuh Agent\nhost monitoring"]
+            WAZUH["Wazuh SIEM\nMITRE ATT&CK\n:443"]
+        end
+ 
+        subgraph OBS["Observability"]
+            NODE["Node Exporter\n:9100"]
+            PROM["Prometheus\n:9090"]
+            GRAFANA["Grafana\n:3000"]
+        end
+ 
+        subgraph MGMT["Management"]
+            KUMA["Uptime Kuma\n:3001"]
+            PORTAINER["Portainer\n:9443"]
+            WATCHTOWER["Watchtower\nauto-updates"]
+        end
+    end
+ 
+    TAILSCALE["Tailscale VPN"]
+    YOU([You — anywhere])
+ 
+    ATTACKER -->|brute force| COWRIE
+    COWRIE -->|logs| AGENT
+    AGENT -->|events| WAZUH
+    NODE -->|metrics| PROM
+    PROM -->|data| GRAFANA
+    WAZUH -.->|monitors| KUMA
+    YOU --> TAILSCALE
+    TAILSCALE -->|secure tunnel| SERVER
+```
 
 ---
 
